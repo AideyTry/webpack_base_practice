@@ -1,0 +1,11 @@
+.square{
+    display: flex;
+    width: 600px;
+    height: 300px;
+    background-color: #f00;
+    backface-visibility: hidden;
+}
+
+body{
+    /* background: url('../image/dog.jpg'); */
+}

@@ -1,0 +1,37 @@
+{
+  "id": "2563378",
+  "name": "webpack_explain",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "对于webpack的讲解",
+  "glyphs": [
+    {
+      "icon_id": "584254",
+      "name": "箭头",
+      "font_class": "iconfontjiantou",
+      "unicode": "e638",
+      "unicode_decimal": 58936
+    },
+    {
+      "icon_id": "1905494",
+      "name": "头像 女孩",
+      "font_class": "icon-test",
+      "unicode": "e66b",
+      "unicode_decimal": 58987
+    },
+    {
+      "icon_id": "2882750",
+      "name": "头像",
+      "font_class": "touxiang",
+      "unicode": "e65f",
+      "unicode_decimal": 58975
+    },
+    {
+      "icon_id": "6428138",
+      "name": "箭头",
+      "font_class": "jiantou",
+      "unicode": "e60e",
+      "unicode_decimal": 58894
+    }
+  ]
+}
