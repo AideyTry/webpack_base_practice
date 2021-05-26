@@ -1,7 +1,7 @@
 .square{
     display: flex;
     width: 600px;
-    height: 300px;
+    height: 200px;
     background-color: #f00;
     backface-visibility: hidden;
 }

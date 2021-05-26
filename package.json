@@ -29,23 +29,18 @@
     "webpack-cli": "^4.7.0",
     "webpack-dev-server": "^3.11.2"
   },
-  "browserslist": {
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ],
-    "production": [
-      ">0.2%",
-      "not dead"
-    ]
-  },
   "eslintConfig": {
     "rules": {
       "no-console": "off",
       "linebreak-style": [
         "off",
         "windows"
+      ],
+      "import/no-extraneous-dependencies": [
+        "error",
+        {
+          "devDependencies": true
+        }
       ]
     },
     "parserOptions": {
