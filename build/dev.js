@@ -1,7 +1,7 @@
 /*
  * @Author: Aiden;
  * @Date: 2021-05-20 15:51:21
- * @LastEditTime: 2021-05-26 16:30:16
+ * @LastEditTime: 2021-05-27 10:17:36
  * @LastEditors: Aiden
  * @Description:
  * @Email: aiden.dai@bayconnect.com.cn
@@ -17,6 +17,7 @@ module.exports = {
     path: resolve(__dirname, '../dist'),
     filename: 'built.js',
   },
+  devtool: 'eval-source-map',
   module: {
     // 正常来说，一个文件只能被一个Loader处理。
     // 当一个文件要被多个loader处理，那么一定要指定loader执行的先后顺序
