@@ -1,13 +1,14 @@
 /*
  * @Author: Aiden
  * @Date: 2021-05-20 15:51:21
- * @LastEditTime: 2021-05-27 10:51:08
+ * @LastEditTime: 2021-05-27 15:18:40
  * @LastEditors: Aiden
  * @Description:
  * @Email: aiden.dai@bayconnect.com.cn
  */
 const { resolve } = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 // 用于提取css
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 // 用于压缩css
@@ -29,12 +30,23 @@ const commonCssLoader = [
   },
 ];
 
+/*
+缓存：
+   babel缓存
+      cacheDirectory: true
+   hash: 每次webpack构建时会生成一个唯一的hash值
+      问题：因为js和css同时使用一个hash值，如果重新打包，会导致所有缓存失效。（可能我缺值修改了一个文件）
+   chunkhash:根据chunk生成的hash值，如果打包来源于同一个chunk,那么hash值就一样。
+      问题：js和css的hash值还是一样的，是因为css是在js中被引入的，所以同属于一个chunk.
+   contenthash: 会根据文件的内容生成hash值，不同文件hash值不同
+*/
+
 module.exports = {
   mode: 'production', // 压缩js
   entry: './src/index.js',
   output: {
     path: resolve(__dirname, '../dist'),
-    filename: 'built.js',
+    filename: 'built.[contenthash:10].js',
   },
   devtool: 'source-map',
   module: {
@@ -78,6 +90,8 @@ module.exports = {
                   },
                 ],
               ],
+              // 开启babel缓存，第二次构建时会读取之前的缓存，从而速度更快一些。
+              cacheDirectory: true,
             },
           },
           // loader的配置
@@ -121,6 +135,11 @@ module.exports = {
     ],
   },
   plugins: [
+    new CleanWebpackPlugin(),
+    new MiniCssExtractPlugin({
+      filename: 'main[contenthash:10].css',
+    }),
+    new OptimizeCssAssetsPlugin(),
     new HtmlWebpackPlugin({
       template: './src/index.html',
       // minify: {
@@ -128,7 +147,5 @@ module.exports = {
       //   removeComments: true, // 去除注释
       // },
     }),
-    new MiniCssExtractPlugin(),
-    new OptimizeCssAssetsPlugin(),
   ],
 };
