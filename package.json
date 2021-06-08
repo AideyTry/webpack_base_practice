@@ -6,6 +6,7 @@
   "devDependencies": {
     "@babel/core": "^7.14.3",
     "@babel/preset-env": "^7.14.2",
+    "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.2",
     "clean-webpack-plugin": "^4.0.0-alpha.0",
     "core-js": "3",
@@ -42,9 +43,12 @@
         {
           "devDependencies": true
         }
-      ]
+      ],
+      "generators": "never"
     },
+    "parser": "babel-eslint",
     "parserOptions": {
+      "parser": "eslint-loader",
       "ecmaVersion": 6,
       "sourceType": "module"
     },
@@ -56,6 +60,7 @@
     "extends": "airbnb-base"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "vue": "^2.6.13"
   }
 }

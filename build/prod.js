@@ -1,7 +1,7 @@
 /*
  * @Author: Aiden
  * @Date: 2021-05-20 15:51:21
- * @LastEditTime: 2021-05-27 15:18:40
+ * @LastEditTime: 2021-06-07 10:26:41
  * @LastEditors: Aiden
  * @Description:
  * @Email: aiden.dai@bayconnect.com.cn
@@ -46,7 +46,7 @@ module.exports = {
   entry: './src/index.js',
   output: {
     path: resolve(__dirname, '../dist'),
-    filename: 'built.[contenthash:10].js',
+    filename: '[name].[contenthash:10].js',
   },
   devtool: 'source-map',
   module: {
@@ -148,4 +148,14 @@ module.exports = {
       // },
     }),
   ],
+  // 代码分割
+  /**
+   * 1、可以将node_modules中代码单独打包到一个chunk最终输出；
+   * 2、自动分析多入口chunk中，有没有公共的文件；如果有回打包成单独一个chunk.
+   */
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+    },
+  },
 };

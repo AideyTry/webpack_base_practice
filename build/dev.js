@@ -1,14 +1,14 @@
 /*
  * @Author: Aiden;
  * @Date: 2021-05-20 15:51:21
- * @LastEditTime: 2021-05-27 14:28:12
+ * @LastEditTime: 2021-06-07 10:17:31
  * @LastEditors: Aiden
  * @Description:
  * @Email: aiden.dai@bayconnect.com.cn
  */
 const { resolve } = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   mode: 'development',
