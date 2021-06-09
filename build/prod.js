@@ -1,7 +1,7 @@
 /*
  * @Author: Aiden
  * @Date: 2021-05-20 15:51:21
- * @LastEditTime: 2021-06-07 10:26:41
+ * @LastEditTime: 2021-06-09 11:21:59
  * @LastEditors: Aiden
  * @Description:
  * @Email: aiden.dai@bayconnect.com.cn
@@ -45,8 +45,12 @@ module.exports = {
   mode: 'production', // 压缩js
   entry: './src/index.js',
   output: {
-    path: resolve(__dirname, '../dist'),
+    // 文件名称（指定名称+ 目录）
     filename: '[name].[contenthash:10].js',
+    // 输出文件目录（将来所有资源输出的公共目录）
+    path: resolve(__dirname, '../dist'),
+    // 所有资源引入公共路劲前缀 --> ‘js/index.js’ -> ‘/js/index.js’
+    publicPath: '/',
   },
   devtool: 'source-map',
   module: {

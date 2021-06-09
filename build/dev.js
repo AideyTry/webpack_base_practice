@@ -1,7 +1,7 @@
 /*
  * @Author: Aiden;
  * @Date: 2021-05-20 15:51:21
- * @LastEditTime: 2021-06-07 10:17:31
+ * @LastEditTime: 2021-06-09 09:37:28
  * @LastEditors: Aiden
  * @Description:
  * @Email: aiden.dai@bayconnect.com.cn
@@ -95,6 +95,7 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
+    // 如果里面传了template则会以某个文件为模板，如果不传template则会自动的帮我们创建一个html文件。
     new HtmlWebpackPlugin({
       template: './src/index.html',
     }),
