@@ -1,7 +1,7 @@
 /*
  * @Author: Aiden
  * @Date: 2021-05-20 15:51:21
- * @LastEditTime: 2021-06-09 11:21:59
+ * @LastEditTime: 2021-06-10 14:17:17
  * @LastEditors: Aiden
  * @Description:
  * @Email: aiden.dai@bayconnect.com.cn
@@ -79,6 +79,7 @@ module.exports = {
             test: /\.js$/,
             exclude: /node_modules/,
             loader: 'babel-loader',
+            // loader: 'babelLoader',
             options: {
               presets: [
                 [
@@ -162,4 +163,10 @@ module.exports = {
       chunks: 'all',
     },
   },
+  resolveLoader: {
+    modules: [
+      'node_modules',
+      resolve(__dirname, '../loaders')
+    ]
+  }
 };
